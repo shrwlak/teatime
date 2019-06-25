@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="kr, en">
+  <head>
+    <meta charset="utf-8">
+    <title>티타임</title>
+    <style media="screen">
+      a{
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        display: inline-block;
+      }
+      iframe{
+        border: 0;
+      }
+
+      .logo{
+        text-align: center;
+        display: inline;
+        font-size: 50px;
+        color: #669966;
+      }
+
+      #ifrm{
+        height:60vh;
+        width:60vw;
+      }
+
+      #banner{
+        text-align: center;
+        padding-bottom: 30px;
+      }
+      #contents{
+        text-align: center;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      function setIframeSrc(id, url) {
+        document.getElementById(id).src = url;
+      }
+    </script>
+    <script type="text/javascript">
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        today8s = yyyy + mm + dd;
+        today4v = mm + '월' + dd + '일'
+    </script>
+
+    <div id="banner" style="border-bottom:3px solid #669966;">
+      <h2 class="logo"><a href="#" id="logodate"></a></h2><h1 class="logo"><a href="index.html"> 티타임</a></h1>
+      <script>///날짜입력
+        document.getElementById("logodate").innerHTML = today4v;
+      </script>
+    </div>
+
+    <div id="contents">
+        <div id="top">
+          <iframe name="contentsifrm" id="ifrm" src="INFO/ERROR/InfoErrorCode263153.html"></iframe>
+          <script type="text/javascript">
+            srcday = "theme/webstudy/"+today8s+".html"
+            setIframeSrc('ifrm', srcday);
+          </script>
+        </div>
+        <div id="bottom">
+          <ul>
+            <li><a href="theme/webstudy/list.html" target="contentsifrm">WEB STUDY 더보기</a></li>
+            <li><a href="blank" target="contentsifrm">최근 글 더보기</a></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+    </div>
+
+  </body>
+</html>
